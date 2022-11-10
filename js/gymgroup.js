@@ -2,10 +2,7 @@ const core = require("./gymcore")
 
 core.req(core.link.login, core.headers, 'POST', core.creds).then((msg)=>{
     core.headers['cookie'] = msg[1]
-    core.link.profile = core.link.profile.replace('UUID', msg[0].uuid)
-    core.link.membership = core.link.membership.replace('UUID', msg[0].uuid)
-    core.link.activity = core.link.activity.replace('UUID', msg[0].uuid)
-    core.link.gym = core.link.gym.replace('UUID', msg[0].uuid)
+    for (l in core.link) core.link[l] = core.link[l].replace('UUID', msg[0].uuid)
 
     core.req(core.link.profile, core.headers, 'GET').then(m=>{
         var text = 'Profile Information\n\n'
