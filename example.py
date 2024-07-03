@@ -7,7 +7,7 @@ base_headers = {
     "host": "thegymgroup.netpulse.com",
     "user-agent": "okhttp/3.12.3",
     "x-np-api-version": "1.5",
-    "x-np-app-version": "5.0",
+    "x-np-app-version": "6.0.1",
     "x-np-user-agent": "clientType=MOBILE_DEVICE; devicePlatform=ANDROID; deviceUid=; applicationName=The Gym Group; applicationVersion=5.0; applicationVersionCode=38"}
 
 profile_headers = base_headers.copy()
