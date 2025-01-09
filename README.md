@@ -25,12 +25,15 @@ The login mechanism requires slighty different headers to the rest of the API:
     "host": "thegymgroup.netpulse.com",
     "user-agent": "okhttp/3.12.3",
     "x-np-api-version": "1.5",
-    "x-np-app-version": "5.0",
+    "x-np-app-version": "6.5.1",
     "x-np-user-agent": "clientType=MOBILE_DEVICE; devicePlatform=ANDROID; deviceUid=; applicationName=The Gym Group; applicationVersion=5.0; applicationVersionCode=38",
     "content-type": "application/x-www-form-urlencoded",
     "content-length":"*CALCULATE CONTENT LENGTH HERE*"
 }
 ```
+
+#### Important Note
+You can set the `x-np-app-version` header to a value greater than the current version, such as 9999. This forces the API to use the latest available version, even if the app has been updated. This is an easy workaround to avoid issues where old versions of the API stop working after updates.
 
 ### Get Visits
 When you log in, the response will contain a `Set-Cookie` header. Use this header for other API requests.
@@ -49,7 +52,7 @@ The login response will return general user information including your user UUID
     "host": "thegymgroup.netpulse.com",
     "user-agent": "okhttp/3.12.3",
     "x-np-api-version": "1.5",
-    "x-np-app-version": "5.0",
+    "x-np-app-version": "6.5.1",
     "x-np-user-agent": "clientType=MOBILE_DEVICE; devicePlatform=ANDROID; deviceUid=; applicationName=The Gym Group; applicationVersion=5.0; applicationVersionCode=38"
 }
 ```
